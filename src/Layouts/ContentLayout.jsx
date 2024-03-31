@@ -5,7 +5,7 @@ function ContentLayout() {
     return (
         <>
 
-        <main className="bg-fixed w-full flex  flex-col bg-cover px-10" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(${bg})`, color: 'white'}}>
+        <main className="bg-fixed w-full flex  flex-col bg-cover px-6" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(${bg})`, color: 'white'}}>
             <Outlet />
         </main>
 
