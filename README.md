@@ -26,6 +26,9 @@ EmailJs
 10. For success message 
 Sonner tost
 
+11. For animation
+framer motion staggerChildren
+
 service_6hbs2tc
 
 

@@ -4,14 +4,24 @@ import { BtnList } from "../../../data";
 import NavBtn from "./NavBtn";
 import UseScreenSize from '../../../hooks/UseScreenSize'
 import Response from '../../../ResponsiveComponent/Response'
+import {motion} from 'framer-motion'
 
 function Navigation(){
 
     const angle = 360/BtnList.length
     const size = UseScreenSize();
 
-    const isLarge = size >= 1024
     const isMedium = size >= 768
+
+    const container = {
+        hidden : {opacity:0},
+        show : {
+            opacity : 1,
+            transition : {
+                staggerChildren : 0.3
+            }
+        }
+    }
 
     return (
         <div className="w-full fixed h-screen flex items-center justify-center">
@@ -19,7 +29,12 @@ function Navigation(){
                 {({size}) => {
                     return size && size >= 480 ? 
 
-                        <div className="flex items-center group justify-center relative hover:pause animate-spin-slow">
+                        <motion.div 
+                        
+                        variants={container}
+                        initial='hidden'
+                        animate='show'
+                        className="flex items-center group justify-center relative hover:pause animate-spin-slow">
                             {
                                 BtnList.map((btn,index) => {
                                     const angleRad = (index*angle*Math.PI)/180
@@ -29,7 +44,7 @@ function Navigation(){
                                     return <NavBtn key={btn.label} x={x} y={y} {...btn} />
                                 })
                             }
-                        </div> 
+                        </motion.div> 
 
                         : 
                         

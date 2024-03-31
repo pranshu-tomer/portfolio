@@ -1,21 +1,32 @@
 import React from "react";
+import UseScreenSize from './../../hooks/UseScreenSize'
+import {motion} from 'framer-motion'
 
 const ProjectLayout = ({project}) => {
 
     const handleClick = (link) => {
         window.open(link , '_blank')
     }
+
+    const item = {
+        hidden: {opacity : 0,y:100},
+        show : {opacity : 1,y:0}
+    }
+
+    const size = UseScreenSize()
+    const isSmall = size >= 800
+    const superSmall = size >= 400
  
     return (
         <>
-        <div className="col-span-6 custom-bg p-8 w-full rounded-xl flex flex-col items-center justify-center space-y-4">
+        <motion.div variants={item} className={`${isSmall ? 'col-span-6' : ''} custom-bg p-8 w-full rounded-xl flex flex-col items-center justify-center space-y-4`}>
             <h2 className="font-witch text-accent text-5xl" >{project.name}</h2>
             <p className="font-light">{project.description}</p>
-            <div className="gap-10 flex-custom items-center justify-center w-full">
-                <button onClick={() => handleClick(project.demolink)} className="custom-bg rounded-xl px-10 py-4">View Live Demo</button>
+            <div className={`flex ${superSmall ? 'gap-10' : 'flex-col gap-4'} items-center justify-center w-full`}>
+                <button onClick={() => handleClick(project.demolink)} className="custom-bg rounded-xl px-10 py-4">Live Demo</button>
                 <button onClick={() => handleClick(project.repolink)} className="custom-bg rounded-xl px-10 py-4">GitHub Repository</button>
             </div>
-        </div>
+        </motion.div>
         </>
     )
 }

@@ -1,11 +1,34 @@
+"use client"
 import ProjectLayout from "./ProjectLayout"
+import UseScreenSize from './../../hooks/UseScreenSize'
+import {motion} from 'framer-motion'
 
 const ProjectList = ({projects}) => {
+
+    const size = UseScreenSize()
+    const isSmall = size >= 800
+
+    const container = {
+        hidden : {opacity:0},
+        show : {
+            opacity : 1,
+            transition : {
+                staggerChildren : 0.3,
+                delayChildren : 1.5
+            }
+        }
+    }
 
     return (
         <>
             <section className="w-full py-5">
-                <div className="grid grid-cols-12 gap-8 w-full">
+                <motion.div 
+                
+                variants={container}
+                initial='hidden'
+                animate='show'
+                
+                className={`${isSmall ? 'grid grid-cols-12' : 'flex flex-col'} gap-8 w-full`}>
                     {projects.map((project) => 
                         (
                             <>
@@ -13,7 +36,7 @@ const ProjectList = ({projects}) => {
                             </>
                         )
                     )}
-                </div>
+                </motion.div>
             </section>
         </>
     )

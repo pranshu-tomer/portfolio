@@ -2,6 +2,7 @@ import { Github, TicketCheck, Home, Instagram, Linkedin, NotebookText, Palette, 
 import React from "react"
 import Response from "../../../ResponsiveComponent/Response"
 import clsx from "clsx"
+import {motion} from 'framer-motion'
 
 const NavBtn = ({x,y,label,link,icon,newTab,labelDirection='right'}) => {
 
@@ -30,6 +31,11 @@ const NavBtn = ({x,y,label,link,icon,newTab,labelDirection='right'}) => {
         }
     }
 
+    const item = {
+        hidden: {scale : 0},
+        show : {scale : 1}
+    }
+
     const handleClick = (link,newTab) => {
         window.open(link, newTab ? '_blank' : '_self');
     }
@@ -43,7 +49,7 @@ const NavBtn = ({x,y,label,link,icon,newTab,labelDirection='right'}) => {
 
                     <div className="absolute cursor-pointer z-50"
                         style={{transform: `translate(${x},${y})`, color: 'white'}}>
-                        <button onClick={() => handleClick(link,newTab)} className="text-[#e1e1e1] rounded-full flex items-center justify-center bg-background/20 border-accent-sm backdrop-blur-[8px] shadow-glass-inset hover:shadow-glass-sm">
+                        <motion.button variants={item} onClick={() => handleClick(link,newTab)} className="text-[#e1e1e1] rounded-full flex items-center justify-center bg-background/20 border-accent-sm backdrop-blur-[8px] shadow-glass-inset hover:shadow-glass-sm">
                             <span className="relative w-14 h-14 p-4 group-hover:pause animate-spin-slow-reverse group-hover:text-[#fefe5b]">
                             {getIcon(icon)}
 
@@ -52,7 +58,7 @@ const NavBtn = ({x,y,label,link,icon,newTab,labelDirection='right'}) => {
                                     {label}
                                 </span>
                             </span>
-                        </button>
+                        </motion.button>
                     </div>
 
                 :
