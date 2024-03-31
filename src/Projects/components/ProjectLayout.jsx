@@ -23,7 +23,7 @@ const ProjectLayout = ({project}) => {
             <h2 className="font-witch text-accent text-5xl" >{project.name}</h2>
             <p className="font-light">{project.description}</p>
             <div className={`flex ${superSmall ? 'gap-10' : 'flex-col gap-4'} items-center justify-center w-full`}>
-                <button onClick={() => handleClick(project.demolink)} className="custom-bg rounded-xl px-10 py-4">Live Demo</button>
+                {project.demolink ? <button onClick={() => handleClick(project.demolink)} className="custom-bg rounded-xl px-10 py-4">Live Demo</button> : ''}
                 <button onClick={() => handleClick(project.repolink)} className="custom-bg rounded-xl px-10 py-4">GitHub Repository</button>
             </div>
         </motion.div>

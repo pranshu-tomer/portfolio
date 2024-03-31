@@ -35,6 +35,39 @@ export const projectsData = [
     description: "A sleek side navigation bar implementation. Mini frontend project , just for Fun",
     demolink: "https://phenomenal-nougat-2c14ff.netlify.app/",
     repolink: "https://github.com/pranshu-tomer/Mini-Project-html-css",
+  },
+  {
+    id: 8289308202,
+    name: 'TodoList-React',
+    description: "It might sound basic, but it's been quite fun and educational. For state management , I used contextAPI. I used a hook called useEffect to set and get the items in localStorage.",
+    demolink: "https://shadow-voltrex-todo-list.netlify.app/",
+    repolink: "https://github.com/pranshu-tomer/todo-list-react"
+  },
+  {
+    id: 2944924748,
+    name: 'Password Generator',
+    description: "This project is based on ReactJs.  You can create password of diffrent length.",
+    demolink: 'https://shadow-voltrex-password-generator.netlify.app/',
+    repolink: "https://github.com/pranshu-tomer/passwordGenerator-react"
+  },
+  {
+    id: 2842947959,
+    name: 'Number Guess Game',
+    description: 'This project is purely based on JavaScript.Game is about guessing the random number',
+    demolink: 'https://shadow-voltrex-guess-number.netlify.app/',
+    repolink: 'https://github.com/pranshu-tomer/guessNumber-game'
+  },
+  {
+    id: 7294048558,
+    name: 'Fruit Predictor',
+    description: 'Based on machine learning.It predict the fruit name according to its physical appearance',
+    repolink: 'https://github.com/pranshu-tomer/fruit-predictor'
+  },
+  {
+    id: 279475903,
+    name: 'Laptop Price Predictor',
+    description: 'Based on machine learning.It predict the Laptop price according to its specifications like RAM,size and storage etc.',
+    repolink: 'https://github.com/pranshu-tomer/laptop-price-predictor'
   }
 ];
 
