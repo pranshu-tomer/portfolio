@@ -54,7 +54,7 @@ const NavBtn = ({x,y,label,link,icon,newTab,labelDirection='right'}) => {
                             {getIcon(icon)}
 
                             <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
-                                <span className="font-witch font-bold text-2xl absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-[#1b1b1b] text-[#e1e1e1] text-sm rounded-md shadow-lg whitespace-nowrap">
+                                <span className="font-bold text-2xl absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 custom-bg text-[#e1e1e1] text-sm rounded-md shadow-lg whitespace-nowrap">
                                     {label}
                                 </span>
                             </span>
