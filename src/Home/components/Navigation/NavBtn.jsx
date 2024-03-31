@@ -1,7 +1,9 @@
 import { Github, TicketCheck, Home, Instagram, Linkedin, NotebookText, Palette, Phone, Twitter, User } from "lucide-react"
 import React from "react"
+import Response from "../../../ResponsiveComponent/Response"
+import clsx from "clsx"
 
-const NavBtn = ({x,y,label,link,icon,newTab}) => {
+const NavBtn = ({x,y,label,link,icon,newTab,labelDirection='right'}) => {
 
     const getIcon = (icon) => {
         switch(icon) {
@@ -33,19 +35,43 @@ const NavBtn = ({x,y,label,link,icon,newTab}) => {
     }
 
     return (
-        <div className="absolute cursor-pointer z-50"
-        style={{transform: `translate(${x},${y})`, color: 'white'}}>
-            <button onClick={() => handleClick(link,newTab)} className="text-[#e1e1e1] rounded-full flex items-center justify-center bg-background/20 border-accent-sm backdrop-blur-[8px] shadow-glass-inset hover:shadow-glass-sm">
-                <span className="relative w-14 h-14 p-4 group-hover:pause animate-spin-slow-reverse group-hover:text-[#fefe5b]">
-                    {getIcon(icon)}
+        <Response>
 
-                    <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
-                    <span className="font-witch font-bold text-2xl absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-[#1b1b1b] text-[#e1e1e1] text-sm rounded-md shadow-lg whitespace-nowrap">
-                        {label}
-                    </span>
-                </span>
-            </button>
-        </div>
+            {({size}) => {
+
+                return size && size >= 480 ?
+
+                    <div className="absolute cursor-pointer z-50"
+                        style={{transform: `translate(${x},${y})`, color: 'white'}}>
+                        <button onClick={() => handleClick(link,newTab)} className="text-[#e1e1e1] rounded-full flex items-center justify-center bg-background/20 border-accent-sm backdrop-blur-[8px] shadow-glass-inset hover:shadow-glass-sm">
+                            <span className="relative w-14 h-14 p-4 group-hover:pause animate-spin-slow-reverse group-hover:text-[#fefe5b]">
+                            {getIcon(icon)}
+
+                            <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
+                                <span className="font-witch font-bold text-2xl absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-[#1b1b1b] text-[#e1e1e1] text-sm rounded-md shadow-lg whitespace-nowrap">
+                                    {label}
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+
+                :
+
+                <div className="cursor-pointer z-50">
+                    <button onClick={() => handleClick(link,newTab)} className="text-[#e1e1e1] rounded-full flex items-center justify-center bg-background/20 border-accent-sm backdrop-blur-[8px] shadow-glass-inset hover:shadow-glass-sm">
+                        <span className="relative  w-12 h-12 xs:w-14 xs:h-14 p-4 group-hover:text-[#fefe5b]">
+                        {getIcon(icon)}
+
+                        <span className="peer bg-transparent absolute top-0 left-0 w-full h-full"/>
+                            <span className={clsx("font-witch font-bold text-2xl absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-[#1b1b1b] text-[#e1e1e1] text-sm rounded-md shadow-lg whitespace-nowrap", labelDirection === 'left' ? 'right-full left-auto' : '')}>
+                                {label}
+                            </span>
+                        </span>
+                    </button>
+                </div>
+
+            }}
+        </Response>
     )
 }
 

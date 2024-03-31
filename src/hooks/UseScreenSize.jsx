@@ -20,8 +20,10 @@ function UseScreenSize() {
         handleResize();
         window.addEventListener('resize', handleResize)
 
-        return () => window.removeEventListener(handleResize)
+        return () => window.removeEventListener('resize',handleResize)
     }, [])
+
+    return screenSize
 }
 
 export default UseScreenSize

@@ -15,6 +15,9 @@ export default {
       boxShadow:{
         'glass-inset' : 'inset 0 17px 5px -9px rgba(254,254,91,0.05)',
         'glass-sm' : '5px 5px 20px 0 rgba(254,254,91,0.3)'
+      },
+      screens:{
+        xs: '480px'
       }
     },
     fontFamily:{
