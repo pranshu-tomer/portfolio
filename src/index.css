@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities{
+    .pause{
+        animation-play-state: paused;
+    }
+
+    .custom-bg{
+        @apply bg-background/20 border-accent-sm backdrop-blur-[5px] shadow-glass-inset hover:shadow-glass-sm
+    }
+
+    .border-accent-sm {
+        border: 1.7px solid rgba(254,254,91,0.14);
+    }
+
+    .testing {
+        border: 2px solid red;
+    }
+
+    .flex-custom {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+/* text-[#e1e1e1] rounded-full */
