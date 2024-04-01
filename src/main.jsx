@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
 import { RouterProvider , createBrowserRouter , createRoutesFromElements , Route } from 'react-router-dom'
 import HomeLayout from './Layouts/HomeLayout'
 import ContentLayout from './Layouts/ContentLayout'
@@ -28,8 +28,15 @@ const router = createBrowserRouter(
 
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-        <React.StrictMode>
-        <RouterProvider router={router}/>
-        </React.StrictMode>
-)
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//         <React.StrictMode>
+//         <RouterProvider router={router}/>
+//         </React.StrictMode>
+// )
+
+ReactDOM.render(
+    <React.StrictMode>
+    <RouterProvider router={router}/>
+    </React.StrictMode>
+    document.getElementById('root')
+);
