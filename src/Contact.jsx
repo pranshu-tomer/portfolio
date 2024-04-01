@@ -1,5 +1,5 @@
-import HomeBtn from '../HomeBtn'
-import Form from './Form'
+import HomeBtn from './HomeBtn'
+import Form from './contact/Form'
 
 function Contact() {
   return (

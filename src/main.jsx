@@ -4,11 +4,11 @@ import { RouterProvider , createBrowserRouter , createRoutesFromElements , Route
 import HomeLayout from './Layouts/HomeLayout'
 import ContentLayout from './Layouts/ContentLayout'
 
-import About from './About/About'
-import Projects from './Projects/Project'
-import Contact from './contact/Contact'
+import About from './About'
+import Projects from './Project'
+import Contact from './Contact'
 import './index.css'
-import Certicate from './Certificates/Certificate'
+import Certicate from './Certificate'
 
 
 const router = createBrowserRouter(

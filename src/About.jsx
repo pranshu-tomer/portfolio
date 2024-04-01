@@ -1,6 +1,6 @@
-import Text from './components/Text'
-import AboutDetails from './components/AboutDetails'
-import HomeBtn from '../HomeBtn'
+import Text from './About/components/Text'
+import AboutDetails from './About/components/AboutDetails'
+import HomeBtn from './HomeBtn'
 
 function About(){
     return (

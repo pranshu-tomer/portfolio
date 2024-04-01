@@ -1,6 +1,6 @@
-import { projectsData } from "../data"
-import HomeBtn from "../HomeBtn"
-import UseScreenSize from "./../hooks/UseScreenSize"
+import { projectsData } from "./data"
+import HomeBtn from "./HomeBtn"
+import UseScreenSize from "./hooks/UseScreenSize"
 
 function Certicate() {
     
