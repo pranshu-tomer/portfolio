@@ -1,4 +1,4 @@
-"use client"
+
 import ProjectLayout from "./ProjectLayout"
 import UseScreenSize from './../../hooks/UseScreenSize'
 import {motion} from 'framer-motion'
