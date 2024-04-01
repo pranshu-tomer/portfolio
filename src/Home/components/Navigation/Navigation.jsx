@@ -1,4 +1,4 @@
-"use client"
+
 import React from "react";
 import { BtnList } from "../../../data";
 import NavBtn from "./NavBtn";
